@@ -11,16 +11,13 @@ Route::get('/about', function () {
 });
 
 Route::get('/mahasiswa', function () {
-    return view('mahasiswa');
+    $npm = [123,124,125,126];
+    $nama = ['indah','Laura','Bejo','Cinta'];
+    $jumlah = count ($npm);
+    return view('mahasiswa',compact('npm','jumlah','nama'));
 });
 
 Route::get('/profile', function () {
     $nama = 'Indah';
     return view('profile', compact('nama'));
-});
-
-Route::get('array', function(){
-    for ($i=1; $i <= 5; $i++) {
-        echo 'Hello world ' . $i . 'x<br>';
-    }
 });
