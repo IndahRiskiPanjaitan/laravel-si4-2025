@@ -20,10 +20,7 @@ Route::get('/profile', function () {
 });
 
 Route::get('array', function(){
-    // Infinite Loop
-    $nilai_awal =1;
-    while ($nilai_awal <= 100) {
-        echo ' Hello Laravel ' . $nilai_awal . 'x<br>';
-        $nilai_awal++;
+    for ($i=1; $i <= 5; $i++) {
+        echo 'Hello world ' . $i . 'x<br>';
     }
 });
