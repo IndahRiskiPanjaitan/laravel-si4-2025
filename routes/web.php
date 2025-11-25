@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Pasiencontroller;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get("/pasien", [Pasiencontroller::class, "index"]);
 
 Route::get('/about', function () {
     return view('about');
