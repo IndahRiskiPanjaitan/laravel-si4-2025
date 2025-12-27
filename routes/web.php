@@ -1,22 +1,31 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Pasiencontroller;
+use App\Http\Controllers\MahasiswaController;
 
-Route::get("/pasien", [Pasiencontroller::class, "index"]);
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
 
+// HALAMAN HOME
+Route::get('/', function () {
+    return view('home');
+});
+
+// HALAMAN MAHASISWA (TABEL)
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+
+// HALAMAN TAMBAH MAHASISWA (FORM)
+Route::get('/mahasiswa/create', [MahasiswaController::class, 'create']);
+
+// HALAMAN PROFILE
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+// HALAMAN ABOUT
 Route::get('/about', function () {
     return view('about');
-});
-
-Route::get('/mahasiswa', function () {
-    $npm = [123,124,125,126];
-    $nama = ['indah','Laura','Bejo','Cinta'];
-    $jumlah = count ($npm);
-    return view('mahasiswa',compact('npm','jumlah','nama'));
-});
-
-Route::get('/profile', function () {
-    $nama = 'Indah';
-    return view('profile', compact('nama'));
 });

@@ -1,103 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mahasiswa</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Tambah Mahasiswa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/home">Laravel</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+    <a class="navbar-brand fw-bold" href="#">Laravel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="/mahasiswa">Mahasiswa</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/profile">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-    </ul>
-
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/mahasiswa">Mahasiswa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+        </ul>
+        <input type="text" class="form-control w-25" placeholder="Search">
+    </div>
 </nav>
 
+<!-- CONTENT -->
 <div class="container mt-4">
-  <h1>Halaman Mahasiswa</h1>
+    <h2 class="fw-bold">Ini adalah halaman Tambah Mahasiswa</h2>
+    <h5 class="mb-4">Form Mahasiswa</h5>
 
-  <div class="row">
-    <div class="col-sm-6">
-      <table class="table table-danger table-sm table-hover table-striped table-bordered text-center">
-    <thead>
-      <tr>
-        <th>NPM</th>
-        <th>Nama Mahasiswa</th>
-        <th>Jenis Kelamin</th>
-        <th colspan="2">TTL</th>
-      </tr>
-    </thead>
-  <tbody>
-  @for ($i = 0; $i < $jumlah; $i++)
-  <tr>
-    <td>{{ $npm[$i] }}</td>
-    <td>{{ $nama[$i] }}</td>
-    <td>Perempuan</td>
-    <td>Kota Medan</td>
-  </tr>
-  @endfor
-  </tbody>
-</table>
+    <form>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">NPM</label>
+                <input type="text" class="form-control" placeholder="Input NPM">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Nama Mahasiswa</label>
+                <input type="text" class="form-control" placeholder="Input Nama Mahasiswa">
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <label class="form-label">Tanggal Lahir</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Prodi</label>
+                <input type="text" class="form-control" value="Sistem Informasi">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 d-grid">
+                <button class="btn btn-primary">Simpan</button>
+            </div>
+            <div class="col-md-6 d-grid">
+                <a href="/mahasiswa" class="btn btn-secondary">Kembali</a>
+            </div>
+        </div>
+    </form>
 </div>
-<div class="col-sm-6">
-  <h4>Form Mahasiswa</h4>
-  <form action="" method="GET">
-    <div class="row">
-      <div class="col-sm-6">
-        <label for="">NPM</label>
-        <input type="number" name="npm" class="form-control" placeholder="Input NPR">
-      </div>
-      <div class="col-sm-6">
-        <label for="">Nama Mahasiswa</label>
-        <input type="text" name="nama_mahasiswa" class="form-control " placeholder="Input Nama Mahasiswa">
-      </div> 
-      <div class="col-sm-6">
-        <label for="">Tanggal Lahir</label>
-        <input type="date" name="tgl_lahir" class="form-control">
-      </div>
-      <div class="col-sm-6">
-        <label for="">Prodi</label>
-        <select name="prodi" class="form-control">
-          <option>Sistem Informasi</option>
-          <option>>Teknik Informatika</option>
-          <option>Sains Data</option>
-        </select>
-      </div>
-    </div>
 
-    <div class="row mt-2">
-      <div class="col-sm-12">
-        <button class="btn btn-primary" style="width: 100%" type="submit">simpan</button>
-      </div>
-    </div>
-
-  </form>
-</div>
-</div>   
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
